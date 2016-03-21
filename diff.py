@@ -8,7 +8,9 @@ import xlrd
 
 
 class Exceldiff(object):
-    "C:\Python34\Scripts ./pip.exe install xlrd "
+    '''using xlrd to see the difference between 2 excel files. need install xlrd like below:
+    C:\Python34\Scripts ./pip.exe install xlrd '''
+    
     file1 = 'checklist-app-2015-12-01.xls'
     file2 = 'checklist-app-2015-12-09.xls'
 
@@ -16,8 +18,7 @@ class Exceldiff(object):
         self.data1 = xlrd.open_workbook(self.file1)
         self.data2 = xlrd.open_workbook(self.file2)
 
-    def excel_diff(self):
-        
+    def excel_diff(self):  
         table1 = self.data1.sheet_by_index(0)
         table2 = self.data2.sheet_by_index(0)
 
@@ -32,14 +33,14 @@ class Exceldiff(object):
 
         print ("1.xls is :")
         print ("---"*10)
-        for i in range(len(lst1) ):
-            print (lst1[i])
+        for item in lst1:
+            print (item)
         print ("Total number:%d"%len(lst1))
 
         print ("2.xls is :")
         print ("---"*10)
-        for i in range(len(lst2) ):
-            print (lst2[i])
+        for item in lst2:
+            print (item)
         print ("Total number:%d"%len(lst2))
             
         print ("---"*10)
@@ -47,12 +48,12 @@ class Exceldiff(object):
         print ("---"*10)
 
         dif_list = list(set(lst2).difference(set(lst1)))
-        for i in range(len(dif_list) ):
-            print (dif_list[i])
+        for item in dif_list:
+            print (item)
 
 
         print ("---"*10)
-        print ("Total number:%d"%len(dif_list))
+        print ("Total difference number:%d"%len(dif_list))
 
     def main(self):
         self.get_files()
