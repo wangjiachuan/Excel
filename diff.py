@@ -1,6 +1,7 @@
+# C:\Python34\Scripts ./pip.exe install xlrd
 import xlrd
 data1 = xlrd.open_workbook('checklist-app-2015-12-01.xls')
-data2 = xlrd.open_workbook('checklist-spec-2015-12-22.xls')
+data2 = xlrd.open_workbook('checklist-app-2015-12-09.xls')
 
 table1 = data1.sheet_by_index(0)
 table2 = data2.sheet_by_index(0)
